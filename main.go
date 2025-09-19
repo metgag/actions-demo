@@ -1,7 +1,13 @@
 package main
 
-import "log"
+import (
+	"log"
+	"strings"
+)
 
 func main() {
-	log.Println("Hello world")
+	log.Printf("%s actions> HELLO, FROM MAIN FUNCTION %s",
+		strings.Repeat("=", 16),
+		strings.Repeat("=", 16),
+	)
 }
