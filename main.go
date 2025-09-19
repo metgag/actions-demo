@@ -1,13 +1,19 @@
 package main
 
 import (
-	"log"
-	"strings"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	log.Printf("%s actions> HELLO, FROM MAIN FUNCTION %s",
-		strings.Repeat("=", 16),
-		strings.Repeat("=", 16),
-	)
+	r := gin.Default()
+
+	r.GET("/ping", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
+
+	r.Run(":7060")
 }
