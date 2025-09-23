@@ -19,6 +19,6 @@ COPY --from=builder /build/server ./server
 
 RUN chmod +x server
 
-EXPOSE 8080
+EXPOSE 7060
 
 CMD [ "./server" ]
